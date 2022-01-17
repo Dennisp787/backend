@@ -10,7 +10,7 @@ const profile = require('./controllers/profile');
 const db = knex({
     client: 'pg',
     connection: {
-    host : '127.0.0.1',
+    host : 'postgresql-reticulated-69015',
     user : '',
     password : '',
     database : 'smart-brain'
@@ -24,8 +24,7 @@ app.use(cors());
 app.use(express.json())
 
 
-app.get('/', (req, res) =>{
-    res.send('success');
+app.get('/', (req, res) => {res.send('success');
 })
 
 app.post('/signin', (req, res) => {signin.handleSignin(req, res, db, bcrypt)})
